@@ -23,6 +23,7 @@ db.init_db()
 UPLOAD_DIR = "data/uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 app.mount("/media", StaticFiles(directory=UPLOAD_DIR), name="media")
+app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 
 def get_db():
     session = db.SessionLocal()
